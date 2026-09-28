@@ -324,7 +324,8 @@ def main():
         )
 
         fig, ax = plt.subplots(
-            figsize=(8, 5)
+    figsize=(6, 3.5)
+
         )
 
         ax.bar(
@@ -355,8 +356,8 @@ def main():
             "Performance Distribution"
         )
 
-        fig, ax = plt.subplots(
-            figsize=(8, 5)
+        fig, ax = plt.subplots(figsize=(6, 3.5)
+
         )
 
         ax.bar(
@@ -395,9 +396,7 @@ def main():
             .mean()
         )
 
-        fig, ax = plt.subplots(
-            figsize=(9, 5)
-        )
+        fig, ax = plt.subplots(figsize=(6, 3.5))
 
         ax.bar(
             study_analysis.index.astype(str),
@@ -431,9 +430,7 @@ def main():
             .mean()
         )
 
-        fig, ax = plt.subplots(
-            figsize=(9, 5)
-        )
+        fig, ax = plt.subplots(figsize=(6, 3.5))
 
         ax.bar(
             attendance_analysis.index.astype(str),
@@ -469,9 +466,7 @@ def main():
             )
         )
 
-        fig, ax = plt.subplots(
-            figsize=(9, 5)
-        )
+        fig, ax = plt.subplots(figsize=(6, 3.5))
 
         ax.bar(
             parent_analysis.index,
@@ -500,9 +495,7 @@ def main():
             "Previous Score vs Current Score"
         )
 
-        fig, ax = plt.subplots(
-            figsize=(9, 5)
-        )
+        fig, ax = plt.subplots(figsize=(6, 3.5))
 
         ax.scatter(
             filtered_df["Previous_Score"],
@@ -651,9 +644,7 @@ def main():
             numeric_columns
         ].corr()
 
-        fig, ax = plt.subplots(
-            figsize=(11, 8)
-        )
+        fig, ax = plt.subplots(figsize=(6, 3.5))
 
         sns.heatmap(
             correlation,
@@ -681,9 +672,7 @@ def main():
             )
         )
 
-        fig, ax = plt.subplots(
-            figsize=(9, 5)
-        )
+        fig, ax = plt.subplots(figsize=(6, 3.5))
 
         ax.bar(
             avg_score_corr.index,
