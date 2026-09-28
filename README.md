@@ -8,7 +8,7 @@ The project demonstrates practical application of **Python, Pandas, NumPy, Matpl
 
 ## Project Overview
 
-Educational datasets can contain patterns related to factors such as study time, attendance, previous academic performance, sleep, and other student characteristics.
+Educational performance data can contain patterns related to factors such as study time, attendance, previous academic performance, sleep, and other student characteristics.
 
 This project analyzes a synthetic dataset containing **500 student records** to explore questions such as:
 
@@ -22,8 +22,6 @@ This project analyzes a synthetic dataset containing **500 student records** to 
 * Which numerical variables show stronger or weaker linear associations with average score?
 
 The primary goal is to demonstrate a complete **data analysis workflow**, from dataset generation and cleaning to visualization, statistical analysis, risk analysis, and dashboard development.
-
----
 
 ## Objectives
 
@@ -40,8 +38,6 @@ The main objectives of this project are:
 9. Create meaningful visualizations using Matplotlib and Seaborn.
 10. Build an interactive dashboard using Streamlit.
 11. Present analytical results in a clear and accessible format.
-
----
 
 ## Dataset
 
@@ -65,8 +61,6 @@ The project uses a **synthetically generated dataset containing 500 students**.
 
 ### Engineered Features
 
-The project creates additional analytical features:
-
 | Feature               | Description                                 |
 | --------------------- | ------------------------------------------- |
 | `Average_Score`       | Mean of Math, Science, and English scores   |
@@ -74,8 +68,6 @@ The project creates additional analytical features:
 | `Study_Hour_Group`    | Grouped study-hour range                    |
 | `Attendance_Group`    | Grouped attendance range                    |
 | `Risk_Status`         | Project-defined risk classification         |
-
----
 
 ## Performance Classification
 
@@ -89,8 +81,6 @@ Students are categorized according to their average score:
 |      Below 40 | Poor              |
 
 These categories are created specifically for this project and are not official academic grading standards.
-
----
 
 ## Risk Analysis
 
@@ -115,8 +105,6 @@ Not At Risk
 This is a **project-defined analytical rule**, not a validated educational risk model.
 
 It does not predict student outcomes and should not be used to make real-world decisions about students.
-
----
 
 ## Exploratory Data Analysis
 
@@ -154,8 +142,6 @@ The project performs exploratory analysis across several dimensions.
 * Extracurricular participation vs performance
 * Gender-based performance analysis
 
----
-
 ## Statistical Analysis
 
 The project applies several statistical and analytical techniques:
@@ -172,8 +158,6 @@ The project applies several statistical and analytical techniques:
 * IQR-based outlier detection
 
 These techniques are used to summarize the dataset and investigate relationships between variables.
-
----
 
 ## Correlation Analysis
 
@@ -192,8 +176,143 @@ Correlation indicates an association between variables. It **does not establish 
 
 Because this project uses synthetic data, observed relationships should be treated as demonstrations of analytical techniques rather than real-world evidence.
 
----
-
 ## Outlier Detection
 
-The project uses the **I**
+The project uses the **Interquartile Range (IQR)** method to identify potentially unusual average-score values.
+
+The method is based on:
+
+```text
+IQR = Q3 - Q1
+```
+
+Potential outliers are identified using standard IQR boundaries:
+
+```text
+Lower Bound = Q1 - 1.5 × IQR
+Upper Bound = Q3 + 1.5 × IQR
+```
+
+Outliers are treated as values that may require further investigation rather than automatically being considered errors.
+
+## Streamlit Dashboard
+
+The project includes an interactive dashboard built with **Streamlit**.
+
+### Dashboard Sections
+
+#### Overview
+
+Provides a high-level summary including:
+
+* Number of students
+* Average score
+* Average attendance
+* Average study hours
+* Subject-wise performance
+* Performance distribution
+
+#### Performance Analysis
+
+Explores relationships between:
+
+* Study hours and average score
+* Attendance and average score
+* Parent education and average score
+* Previous score and current average score
+
+#### Risk Analysis
+
+Includes:
+
+* Number of potentially at-risk students
+* Risk distribution
+* At-risk student records
+* Outlier analysis
+
+#### Correlation Analysis
+
+Includes:
+
+* Correlation matrix
+* Correlation heatmap
+* Numerical factors associated with average score
+
+#### Student Data
+
+Allows users to:
+
+* Search by Student ID
+* Apply filters
+* View student records
+* Download filtered data as CSV
+
+## Interactive Filtering
+
+The dashboard allows users to filter the dataset based on available student attributes such as:
+
+* Gender
+* Overall performance
+* Risk status
+
+This makes it possible to explore specific groups interactively rather than relying only on static analysis.
+
+## Project Workflow
+
+```text
+Synthetic Data Generation
+          ↓
+Data Validation
+          ↓
+Data Cleaning
+          ↓
+Feature Engineering
+          ↓
+Exploratory Data Analysis
+          ↓
+Statistical Analysis
+          ↓
+Correlation Analysis
+          ↓
+Outlier Detection
+          ↓
+Risk Identification
+          ↓
+Data Visualization
+          ↓
+Interactive Streamlit Dashboard
+```
+
+## Technologies Used
+
+| Technology       | Purpose                                      |
+| ---------------- | -------------------------------------------- |
+| Python           | Core programming language                    |
+| Pandas           | Data manipulation and analysis               |
+| NumPy            | Numerical operations and feature engineering |
+| Matplotlib       | Data visualization                           |
+| Seaborn          | Statistical visualization                    |
+| Streamlit        | Interactive dashboard                        |
+| Jupyter Notebook | Exploratory analysis and experimentation     |
+| Git & GitHub     | Version control and project hosting          |
+
+## Project Structure
+
+```text
+student-performance-analytics/
+│
+├── data/
+│   └── student_performance.csv
+│
+├── nb/
+│   └── student_performance_analysis.ipynb
+│
+├── screenshots/
+│   ├── overview.png
+│   ├── performance.png
+│   ├── risk_analysis.png
+│   └── correlation.png
+│
+├── app.py
+├── generate_data_
+```
